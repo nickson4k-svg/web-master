@@ -37,9 +37,6 @@ export default function BloggersCatalog({ onOpenBlogger }: BloggersCatalogProps)
 
             <div className="card-top-row">
               <span className="card-category-badge">{blogger.niche}</span>
-              <div className="card-badges-left">
-                <span className="card-status-dot" title="Онлайн 24/7"></span>
-              </div>
             </div>
 
             <div className="card-info">

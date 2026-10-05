@@ -285,7 +285,7 @@ body {
   margin: 0;
   padding: 24px 0 28px;
   background-color: #020305;
-  overflow: hidden;
+  overflow: clip;
   border-bottom: 1px solid var(--border-color);
 }
 

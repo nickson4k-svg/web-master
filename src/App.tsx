@@ -62,7 +62,7 @@ export default function App() {
       <Hero onOpenBlogger={handleOpenBloggerById} />
 
       {/* Main Content Sections */}
-      <main className="main-content overflow-x-hidden w-full max-w-full">
+      <main className="main-content overflow-x-clip w-full max-w-full">
         {/* 2. Catalog Section with Category Filter */}
         <BloggersCatalog onOpenBlogger={handleOpenBloggerById} />
 
