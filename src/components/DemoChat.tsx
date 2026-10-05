@@ -84,9 +84,9 @@ export default function DemoChat() {
             </p>
           </div>
 
-          {/* Character Tabs Picker */}
-          <div className="dialog-selector-wrap">
-            <div className="demo-tabs-bar flex flex-wrap justify-center gap-2 max-w-full px-2">
+          {/* Character Tabs Picker (Desktop location) */}
+          <div className="dialog-selector-wrap hidden lg:flex">
+            <div className="demo-tabs-bar flex flex-wrap justify-start gap-2 max-w-full">
               {bloggersData.map((blogger) => (
                 <button
                   key={blogger.id}
@@ -158,7 +158,25 @@ export default function DemoChat() {
         </div>
 
         {/* Right Column (Smartphone Mockup - 5 cols) */}
-        <div className="dialog-phone-col">
+        <div className="dialog-phone-col flex flex-col items-center">
+          {/* Character Tabs Picker (Mobile location - right above phone) */}
+          <div className="dialog-selector-wrap lg:hidden mb-4 w-full">
+            <div className="demo-tabs-bar flex flex-wrap justify-center gap-2 max-w-full px-2">
+              {bloggersData.map((blogger) => (
+                <button
+                  key={blogger.id}
+                  type="button"
+                  className={`demo-tab-btn ${selectedBloggerId === blogger.id ? 'active' : ''}`}
+                  onClick={() => setSelectedBloggerId(blogger.id as 'kai' | 'adrian' | 'elena' | 'mia')}
+                >
+                  <img src={blogger.portraitLocal} alt={blogger.name} className="demo-tab-avatar" />
+                  <span>
+                    {blogger.name.split(' ')[0]} ({blogger.niche})
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
           <div className="phone-glow-ambient" aria-hidden="true"></div>
           <div className="demo-phone">
             <div className="phone-notch"></div>
