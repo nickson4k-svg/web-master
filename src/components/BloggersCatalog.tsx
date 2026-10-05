@@ -10,9 +10,6 @@ export default function BloggersCatalog({ onOpenBlogger }: BloggersCatalogProps)
     <section className="catalog-section" id="catalog">
       <div className="section-heading">
         <h2 className="section-title">Каталог AI-блогеров</h2>
-        <p className="section-desc">
-          Выберите блогера, чтобы открыть профиль, 6 уникальных сетов, недавние истории и начать живой диалог
-        </p>
       </div>
 
       {/* Cards Grid */}

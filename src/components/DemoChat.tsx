@@ -79,28 +79,6 @@ export default function DemoChat() {
         <div className="dialog-info-col">
           <div className="dialog-header-group">
             <h2 className="dialog-title">Общайтесь вживую с каждым персонажем</h2>
-            <p className="dialog-subtitle text-center mx-auto max-w-md px-2 text-sm leading-relaxed">
-              Каждый автор обладает индивидуальной памятью, собственным стилем и тональностью. Проверьте скорость и глубину ответов прямо сейчас:
-            </p>
-          </div>
-
-          {/* Character Tabs Picker (Desktop location: order-2 on mobile under title, desktop in info column) */}
-          <div className="dialog-selector-wrap hidden md:flex">
-            <div className="demo-tabs-bar flex flex-wrap justify-start gap-2 max-w-full">
-              {bloggersData.map((blogger) => (
-                <button
-                  key={blogger.id}
-                  type="button"
-                  className={`demo-tab-btn ${selectedBloggerId === blogger.id ? 'active' : ''}`}
-                  onClick={() => setSelectedBloggerId(blogger.id as 'kai' | 'adrian' | 'elena' | 'mia')}
-                >
-                  <img src={blogger.portraitLocal} alt={blogger.name} className="demo-tab-avatar" />
-                  <span>
-                    {blogger.name.split(' ')[0]} ({blogger.niche})
-                  </span>
-                </button>
-              ))}
-            </div>
           </div>
 
           {/* Features List (3 minimalist points with thin outline icons) */}
@@ -159,19 +137,23 @@ export default function DemoChat() {
 
         {/* Right Column (Smartphone Mockup - 5 cols) */}
         <div className="dialog-phone-col flex flex-col items-center">
-          {/* Character Tabs Picker (Mobile location - right above phone) */}
-          <div className="dialog-selector-wrap md:hidden mb-4 w-full">
-            <div className="demo-tabs-bar flex flex-wrap justify-center gap-2 max-w-full px-2">
+          {/* Character Tabs Picker (Single line strictly within phone width) */}
+          <div 
+            className="w-full max-w-[360px] md:max-w-[380px] px-1" 
+            style={{ marginBottom: '28px' }}
+          >
+            <div className="grid grid-cols-4 gap-1.5 w-full">
               {bloggersData.map((blogger) => (
                 <button
                   key={blogger.id}
                   type="button"
-                  className={`demo-tab-btn ${selectedBloggerId === blogger.id ? 'active' : ''}`}
+                  className={`demo-tab-btn !px-1.5 !py-1.5 !gap-1.5 justify-center w-full min-w-0 ${selectedBloggerId === blogger.id ? 'active' : ''}`}
                   onClick={() => setSelectedBloggerId(blogger.id as 'kai' | 'adrian' | 'elena' | 'mia')}
+                  title={`${blogger.name} (${blogger.niche})`}
                 >
-                  <img src={blogger.portraitLocal} alt={blogger.name} className="demo-tab-avatar" />
-                  <span>
-                    {blogger.name.split(' ')[0]} ({blogger.niche})
+                  <img src={blogger.portraitLocal} alt={blogger.name} className="demo-tab-avatar !w-4 !h-4 shrink-0" />
+                  <span className="truncate text-xs font-medium">
+                    {blogger.name.split(' ')[0]}
                   </span>
                 </button>
               ))}

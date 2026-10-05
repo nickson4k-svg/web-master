@@ -15,7 +15,7 @@ export default function Hero({ onOpenBlogger }: HeroProps) {
           {/* Left Column: Headline, CTAs, Social Proof */}
           <div className="hero-content-col">
             <h1 className="hero-title">
-              Синтетические инфлюенсеры с живым интеллектом
+              AI-блогеры нового поколения.
             </h1>
 
             <p className="hero-desc">
