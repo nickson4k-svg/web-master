@@ -10,7 +10,6 @@ import DemoChat from './components/DemoChat';
 import FaqSection from './components/FaqSection';
 import CtaSection from './components/CtaSection';
 import Footer from './components/Footer';
-import StickyBottomBar from './components/StickyBottomBar';
 import ProfileModal from './components/ProfileModal';
 import StoriesModal from './components/StoriesModal';
 import PostViewerModal from './components/PostViewerModal';
@@ -47,8 +46,6 @@ export default function App() {
     setActivePost({ blogger, post });
   };
 
-  const isAnyModalOpen = Boolean(selectedBlogger || activeStoryBlogger || activePost);
-
   return (
     <div className="relative min-h-screen bg-[var(--bg-main)] text-[var(--text-primary)]">
       {/* Scroll Progress Bar */}
@@ -84,9 +81,6 @@ export default function App() {
 
       {/* Footer */}
       <Footer />
-
-      {/* Sticky Mobile Telegram Floating Button */}
-      <StickyBottomBar isHidden={isAnyModalOpen} />
 
       {/* Profile Modal (Bottom Sheet / Desktop Dialog) */}
       <ProfileModal

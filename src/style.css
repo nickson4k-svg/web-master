@@ -272,7 +272,7 @@ body {
   z-index: 1;
   max-width: 1240px;
   margin: 0 auto;
-  padding: 32px 16px 128px;
+  padding: 32px 16px 64px;
 }
 
 @media (min-width: 768px) {
@@ -2024,38 +2024,7 @@ a.btn-hero:active,
   margin-top: 36px !important;
 }
 
-/* ---------------- Mobile Sticky Bottom Bar ---------------- */
-.mobile-sticky-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 35;
-  background: rgba(11, 14, 20, 0.94);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-top: 1px solid var(--border-color);
-  padding: 10px 16px;
-  padding-bottom: max(12px, env(safe-area-inset-bottom, 12px));
-  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
 
-.mobile-sticky-bar.hidden {
-  display: none !important;
-}
-
-.btn-sticky {
-  width: 100%;
-  padding: 14px 20px;
-  font-size: 15px;
-}
-
-@media (min-width: 641px) {
-  .mobile-sticky-bar {
-    display: none;
-  }
-}
 
 /* ---------------- Bottom Sheet Modal ---------------- */
 .modal-backdrop {
