@@ -84,8 +84,8 @@ export default function DemoChat() {
             </p>
           </div>
 
-          {/* Character Tabs Picker (Desktop location) */}
-          <div className="dialog-selector-wrap hidden lg:flex">
+          {/* Character Tabs Picker (Desktop location: order-2 on mobile under title, desktop in info column) */}
+          <div className="dialog-selector-wrap hidden md:flex">
             <div className="demo-tabs-bar flex flex-wrap justify-start gap-2 max-w-full">
               {bloggersData.map((blogger) => (
                 <button
@@ -160,7 +160,7 @@ export default function DemoChat() {
         {/* Right Column (Smartphone Mockup - 5 cols) */}
         <div className="dialog-phone-col flex flex-col items-center">
           {/* Character Tabs Picker (Mobile location - right above phone) */}
-          <div className="dialog-selector-wrap lg:hidden mb-4 w-full">
+          <div className="dialog-selector-wrap md:hidden mb-4 w-full">
             <div className="demo-tabs-bar flex flex-wrap justify-center gap-2 max-w-full px-2">
               {bloggersData.map((blogger) => (
                 <button
